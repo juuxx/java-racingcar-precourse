@@ -14,7 +14,9 @@ public class ResultMessage {
 	public static void print(Car car) {
 		StringBuilder sb = new StringBuilder();
 		sb.append(car.getName());
+		sb.append(MESSAGE_SPACE);
 		sb.append(STR);
+		sb.append(MESSAGE_SPACE);
 		sb.append(getViewPosition(car.getPosition()));
 
 		System.out.println(sb);

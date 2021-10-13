@@ -19,7 +19,7 @@ public class Car {
 	}
 
 	public void go(int num) {
-		if(num > 4){
+		if(num >= 4){
 			this.position.add();
 		}
 	}

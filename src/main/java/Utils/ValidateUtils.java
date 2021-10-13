@@ -1,5 +1,7 @@
 package Utils;
 
+import java.util.stream.Stream;
+
 import nextstep.utils.Randoms;
 
 public class ValidateUtils {
@@ -9,25 +11,32 @@ public class ValidateUtils {
 	public static final int MIN_NUM = 0;
 	public static final int MAX_NUM = 9;
 
+
 	public static Boolean checkInputLength(String carName) {
-		return carName.length() <= MAX_LENGTH;
+		boolean result = carName.length() <= MAX_LENGTH;
+		ErrorMessageUtils.printErrorLength(result);
+		return result;
 	}
 
 	//레이싱 경주이기 때문에 한명만 출전할 수 없기 때문에 ',' 콤마는 필수
 	public static Boolean checkInputComma(String userInput) {
-		int result = userInput.indexOf(SEPARATOR);
-		return result != -1;
+		int isExist = userInput.indexOf(SEPARATOR);
+		ErrorMessageUtils.printErrorComma(isExist != -1);
+		return isExist != -1;
 	}
 
 
 	public static boolean checkInputRange(int userNum) {
-		return userNum >= 0 && userNum < 10;
+		boolean result = userNum >= 0 && userNum < 10;
+		ErrorMessageUtils.printErrorNum(result);
+		return result;
 	}
 
 	public static boolean checkInputNum(String input) {
 		try {
 			Integer.parseInt(input);
 		} catch (NumberFormatException e) {
+			ErrorMessageUtils.printErrorNum(false);
 			return false;
 		}
 		return true;

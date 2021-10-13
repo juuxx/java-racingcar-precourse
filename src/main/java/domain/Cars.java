@@ -50,7 +50,12 @@ public class Cars {
 		return temp;
 	}
 
-	public List<Car> getWinner() {
+	public void getWinner(){
+		List<Car> winners = getWinnerList();
+		ResultMessage.printWinner(winners);
+	}
+
+	public List<Car> getWinnerList() {
 		List<Car> winners = new ArrayList<>();
 
 		int maxPosition = getMaxPosition();

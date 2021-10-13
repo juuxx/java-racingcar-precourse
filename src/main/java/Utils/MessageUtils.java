@@ -1,27 +1,28 @@
 package Utils;
 
+import nextstep.utils.Console;
+
 public class MessageUtils {
 
-	public static final String ERROR = "[ERROR]";
-	public static final String ERROR_CONTENTS_LENGTH = "이름은 다섯글자 이하로 작성해주세요.";
-	public static final String ERROR_CONTENTS_NUM = "0~9까지의 숫자만 입력해주세요.";
-	public static final String ERROR_CONTENTS_COMMA = "하나 이상의 이름을 입력하거나, 쉼표(\",\")로 값을 구분해주세요.";
+	public static final String INPUT_CARS_NAME_MESSAGE = "경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)";
+	public static final String CHANCE_COUNT_MESSAGE = "시도할 횟수는 몇회인가요?";
+	public static final String RUN_RESULT = "실행결과";
 
-	public static void printErrorLength(Boolean result) {
-		if(!result){
-			System.out.println(ERROR + ERROR_CONTENTS_LENGTH);
-		}
+	public static String inputCarNames(){
+		System.out.println(INPUT_CARS_NAME_MESSAGE);
+		return Console.readLine();
 	}
 
-	public static void printErrorNum(Boolean result) {
-		if(!result){
-			System.out.println(ERROR + ERROR_CONTENTS_NUM);
-		}
+	public static String inputChanceCount(){
+		System.out.println(CHANCE_COUNT_MESSAGE);
+		return Console.readLine();
 	}
 
-	public static void printErrorComma(Boolean result) {
-		if(!result){
-			System.out.println(ERROR + ERROR_CONTENTS_COMMA);
-		}
+	public static void showMessage() {
+		System.out.println(RUN_RESULT);
+	}
+
+	public static void newline() {
+		System.out.println();
 	}
 }

@@ -75,8 +75,6 @@ class CarsTest {
 		}
 
 		//then
-		List<Car> winners = cars.getWinner();
-		cars.print();
-		ResultMessage.printWinner(winners);
+		cars.getWinner();
 	}
 }

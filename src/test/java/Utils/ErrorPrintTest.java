@@ -10,9 +10,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import Utils.MessageUtils;
-import Utils.ValidateUtils;
-
 public class ErrorPrintTest {
 
 	private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
@@ -39,10 +36,10 @@ public class ErrorPrintTest {
 		Boolean result1 = ValidateUtils.checkInputLength("benedict");
 
 		//when
-		MessageUtils.printErrorLength(result1);
+		ErrorMessageUtils.printErrorLength(result1);
 
 		//then
-		assertThat(outContent.toString()).contains(MessageUtils.ERROR_CONTENTS_LENGTH);
+		assertThat(outContent.toString()).contains(ErrorMessageUtils.ERROR_CONTENTS_LENGTH);
 	}
 
 	@Test
@@ -52,10 +49,10 @@ public class ErrorPrintTest {
 		Boolean result1 = ValidateUtils.checkInputNumValid("열");
 
 		//when
-		MessageUtils.printErrorNum(result1);
+		ErrorMessageUtils.printErrorNum(result1);
 
 		//then
-		assertThat(outContent.toString()).contains(MessageUtils.ERROR_CONTENTS_NUM);
+		assertThat(outContent.toString()).contains(ErrorMessageUtils.ERROR_CONTENTS_NUM);
 	}
 
 	@Test
@@ -66,11 +63,11 @@ public class ErrorPrintTest {
 		Boolean result2 = ValidateUtils.checkInputComma("benedict");
 
 		//when
-		MessageUtils.printErrorComma(result1);
-		MessageUtils.printErrorComma(result2);
+		ErrorMessageUtils.printErrorComma(result1);
+		ErrorMessageUtils.printErrorComma(result2);
 
 		//then
-		assertThat(outContent.toString()).contains(MessageUtils.ERROR_CONTENTS_COMMA);
+		assertThat(outContent.toString()).contains(ErrorMessageUtils.ERROR_CONTENTS_COMMA);
 	}
 
 

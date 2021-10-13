@@ -43,7 +43,7 @@ public class CarPrintTest {
 		car.print();
 
 		//then
-		assertThat(outContent.toString()).contains("july:--");
+		assertThat(outContent.toString()).contains("july : --");
 
 	}
 }
