@@ -1,9 +1,13 @@
 package Utils;
 
+import nextstep.utils.Randoms;
+
 public class ValidateUtils {
 
 	public static final int MAX_LENGTH = 5;
 	public static final String SEPARATOR = ",";
+	public static final int MIN_NUM = 0;
+	public static final int MAX_NUM = 9;
 
 	public static Boolean checkInputLength(String carName) {
 		return carName.length() <= MAX_LENGTH;
@@ -36,5 +40,7 @@ public class ValidateUtils {
 		return false;
 	}
 
-
+	public static int makeRandomNum() {
+		return Randoms.pickNumberInRange(MIN_NUM, MAX_NUM);
+	}
 }
